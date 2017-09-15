@@ -1,7 +1,7 @@
 class Auth {
   static login(userParams) {
     const userJSON = JSON.stringify(userParams)
-    return fetch('http://localhost:3000/api/v1/login',{
+    return fetch('https://getmacros-api.herokuapp.com/api/v1/login',{
       method: 'post',
       body: userJSON,
       headers: {
@@ -14,7 +14,7 @@ class Auth {
 
  static signup(userParams) {
     const userJSON = JSON.stringify(userParams)
-    return fetch('http://localhost:3000/api/v1/users',{
+    return fetch('https://getmacros-api.herokuapp.com/api/v1/users',{
       method: 'post',
       body: userJSON,
       headers: {
@@ -27,7 +27,7 @@ class Auth {
 
  static me() {
     const jwtToken = localStorage.getItem("jwt")
-    return fetch('http://localhost:3000/api/v1/me',{
+    return fetch('https://getmacros-api.herokuapp.com/api/v1/me',{
       headers:{
         "Authorization":`Bearer ${jwtToken}`,
         "Accept":"application/json"
@@ -39,7 +39,7 @@ class Auth {
 
  static myMeals() {
     const jwtToken = localStorage.getItem("jwt")
-    return fetch('http://localhost:3000/api/v1/me/meals',{
+    return fetch('https://getmacros-api.herokuapp.com/api/v1/me/meals',{
       headers:{
         "Authorization":`Bearer ${jwtToken}`,
         "Accept":"application/json"
